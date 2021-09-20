@@ -1,32 +1,7 @@
-package com.dicoding.picodiploma.universitytopranking.model;
+package com.dicoding.picodiploma.universitytopranking.model
 
-public class University {
-    private String name;
-    private String detail;
-    private int photo;
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getDetail() {
-        return detail;
-    }
-
-    public void setDetail(String detail) {
-        this.detail = detail;
-    }
-
-    public int getPhoto() {
-        return photo;
-    }
-
-    public void setPhoto(int photo) {
-        this.photo = photo;
-    }
-
+class University {
+    var name: String? = null
+    var detail: String? = null
+    var photo = 0
 }

@@ -1,37 +1,28 @@
-package com.dicoding.picodiploma.universitytopranking.model;
+package com.dicoding.picodiploma.universitytopranking.model
 
-import android.os.Bundle;
-import android.view.MenuItem;
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.view.MenuItem
+import com.dicoding.picodiploma.universitytopranking.R
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
-import com.dicoding.picodiploma.universitytopranking.R;
-
-public class About extends AppCompatActivity {
-
-    public static final String EXTRA_NAME_USER = "extra_name_user";
-    public static final String EXTRA_PHOTO_USER = "extra_photo_user";
-    public static final String EXTRA_EMAIL = "extra_email";
-
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.menu_about);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-        getSupportActionBar().setTitle("About");
-
+class About : AppCompatActivity() {
+    public override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.menu_about)
+        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+        supportActionBar!!.title = "About"
     }
 
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                onBackPressed();
-                break;
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            android.R.id.home -> onBackPressed()
         }
-        return super.onOptionsItemSelected(item);
+        return super.onOptionsItemSelected(item)
+    }
+
+    companion object {
+        const val EXTRA_NAME_USER = "extra_name_user"
+        const val EXTRA_PHOTO_USER = "extra_photo_user"
+        const val EXTRA_EMAIL = "extra_email"
     }
 }
